@@ -1,0 +1,25 @@
+{
+  "manifest_version": 3,
+  "name": "Tab Sweeper",
+  "version": "1.6.0",
+  "description": "Auto-closes tabs you haven't visited in N days, and lets you snooze tabs from the right-click menu.",
+  "icons": { "48": "icon.svg", "96": "icon.svg" },
+  "permissions": ["tabs", "storage", "alarms", "menus", "scripting"],
+  "optional_host_permissions": ["<all_urls>"],
+  "background": { "scripts": ["background.js"] },
+  "sidebar_action": {
+    "default_title": "Tab Sweeper",
+    "default_panel": "sidebar.html",
+    "default_icon": "icon.svg",
+    "open_at_install": false
+  },
+  "options_ui": { "page": "options.html", "open_in_tab": true },
+  "action": { "default_title": "Snooze this tab", "default_icon": "icon.svg", "default_popup": "custom.html" },
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "tab-sweeper@local",
+      "strict_min_version": "142.0",
+      "data_collection_permissions": { "required": ["none"] }
+    }
+  }
+}

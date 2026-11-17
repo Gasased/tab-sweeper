@@ -1,0 +1,61 @@
+<!doctype html>
+<html data-theme="dark">
+<head>
+<meta charset="utf-8">
+<script src="theme.js"></script>
+<link rel="stylesheet" href="tokens.css">
+<title>Custom snooze</title>
+<link rel="stylesheet" href="custom.css">
+</head>
+<body>
+  <form id="form" class="card">
+    <header>
+      <h1>Custom snooze</h1>
+      <button type="button" id="close" class="icon-btn" aria-label="Close">
+        <i data-lucide="x" data-size="16"></i>
+      </button>
+    </header>
+    <p class="sub">Choose when this tab reopens.</p>
+
+    <div id="target" class="target">
+      <span id="tIcon" class="fav"></span>
+      <span id="tTitle"></span>
+    </div>
+
+    <div class="seg" role="tablist">
+      <button type="button" role="tab" data-mode="date" class="on">Date and time</button>
+      <button type="button" role="tab" data-mode="duration">Duration</button>
+    </div>
+
+    <div id="paneDate" class="fields">
+      <label>Date<input id="date" type="date" required></label>
+      <label>Time<input id="time" type="time" required></label>
+    </div>
+
+    <div id="paneDuration" class="fields" hidden>
+      <label>Amount<input id="amount" type="number" min="1" step="1" value="2"></label>
+      <label>Unit
+        <select id="unit">
+          <option value="60000">Minutes</option>
+          <option value="3600000" selected>Hours</option>
+          <option value="86400000">Days</option>
+          <option value="604800000">Weeks</option>
+        </select>
+      </label>
+    </div>
+
+    <p id="preview" class="preview"></p>
+
+    <footer>
+      <button type="button" id="settings" class="ghost">
+        <i data-lucide="sliders-horizontal" data-size="16"></i>
+        Edit snooze options
+      </button>
+      <span class="spacer"></span>
+      <button type="button" id="cancel" class="btn">Cancel</button>
+      <button type="submit" class="btn primary">Snooze</button>
+    </footer>
+  </form>
+  <script src="custom.js"></script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!doctype html>
+<html data-theme="dark">
+<head>
+<meta charset="utf-8">
+<script src="theme.js"></script>
+<link rel="stylesheet" href="tokens.css">
+<title>Tab Sweeper</title>
+<link rel="stylesheet" href="sidebar.css">
+</head>
+<body>
+  <header>
+    <span class="mark"><i data-lucide="alarm-clock" data-size="16"></i></span>
+    <h1>Tab Sweeper</h1>
+    <button id="snoozeCurrent" class="btn primary">Snooze tab</button>
+    <button id="settings" class="icon-btn" title="Settings" aria-label="Settings">
+      <i data-lucide="sliders-horizontal" data-size="16"></i>
+    </button>
+  </header>
+
+  <section>
+    <h2>Snoozed <span id="snoozedCount" class="count"></span></h2>
+    <ul id="snoozed" class="list"></ul>
+    <p id="snoozedEmpty" class="empty">Nothing snoozed.</p>
+  </section>
+
+  <section>
+    <h2>Closing soon <span id="soonCount" class="count"></span></h2>
+    <ul id="soon" class="list"></ul>
+    <p id="soonEmpty" class="empty"></p>
+  </section>
+
+  <section>
+    <h2>Auto-closed <span id="closedCount" class="count"></span></h2>
+    <ul id="closed" class="list"></ul>
+    <p id="closedEmpty" class="empty">No tabs closed yet.</p>
+  </section>
+
+  <script src="sidebar.js"></script>
+</body>
+</html>

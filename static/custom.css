@@ -1,0 +1,32 @@
+html, body { background: var(--card); }
+body { width: 400px; }
+.card { padding: 20px 20px 16px; }
+
+header { display: flex; align-items: center; justify-content: space-between; height: 28px; }
+h1 { font-size: 20px; font-weight: 600; letter-spacing: -0.01em; }
+.sub { margin: 4px 0 16px; color: var(--text-2); font-size: 13px; }
+
+.target { display: flex; align-items: center; gap: 8px; height: 20px; margin-bottom: 16px; color: var(--text-2); font-size: 13px; min-width: 0; }
+.target span { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+
+.seg { display: grid; grid-template-columns: 1fr 1fr; height: 32px; padding: 2px; margin-bottom: 16px; background: var(--sunken); border: 1px solid var(--border); border-radius: 8px; }
+.seg button { border-radius: 6px; color: var(--text-2); font-size: 13px; font-weight: 500; transition: background-color 0.12s, color 0.12s; }
+.seg button:hover { color: var(--text-1); }
+.seg button.on { background: var(--raised); color: var(--text-1); }
+
+.fields { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.fields[hidden] { display: none; }
+label { display: flex; flex-direction: column; gap: 6px; font-size: 12px; font-weight: 500; color: var(--text-3); }
+input, select {
+  height: 36px; width: 100%; padding: 0 10px; border-radius: 8px;
+  font: 400 14px/1 inherit; color: var(--text-1); background: var(--sunken); border: 1px solid var(--border-strong);
+}
+input:focus, select:focus { outline: none; border-color: var(--accent); }
+
+.preview { height: 20px; margin: 12px 0 0; font-size: 13px; color: var(--text-2); }
+.preview.err { color: var(--red); }
+
+footer { display: flex; align-items: center; gap: 8px; margin: 16px -20px 0; padding: 12px 20px 0; border-top: 1px solid var(--border); }
+.spacer { flex: 1; }
+.ghost { display: flex; align-items: center; gap: 6px; height: 32px; padding: 0 8px; margin-left: -8px; border-radius: 8px; color: var(--text-2); font-size: 13px; font-weight: 500; }
+.ghost:hover { background: var(--raised); color: var(--text-1); }

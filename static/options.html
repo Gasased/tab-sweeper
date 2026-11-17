@@ -1,0 +1,107 @@
+<!doctype html>
+<html data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tab Sweeper</title>
+<script src="theme.js"></script>
+<link rel="stylesheet" href="tokens.css">
+<link rel="stylesheet" href="options.css">
+</head>
+<body>
+<main>
+  <header class="top">
+    <span class="mark"><i data-lucide="alarm-clock" data-size="18"></i></span>
+    <h1>Tab Sweeper</h1>
+    <span class="grow"></span>
+    <span id="status" class="status" aria-live="polite"></span>
+    <button id="sweepNow" class="btn primary">Sweep now</button>
+  </header>
+
+  <section class="card">
+    <h2 class="card-title">Auto-close</h2>
+
+    <div class="row">
+      <span class="label">Close tabs not visited for</span>
+      <span class="stepper">
+        <button id="dec" aria-label="Fewer days"><i data-lucide="minus" data-size="14"></i></button>
+        <input id="days" type="number" min="0" max="365" step="1" aria-label="Days">
+        <button id="inc" aria-label="More days"><i data-lucide="plus" data-size="14"></i></button>
+      </span>
+      <span class="unit">days</span>
+    </div>
+
+    <label class="row">
+      <span class="label">Keep pinned tabs</span>
+      <input id="skipPinned" type="checkbox" class="switch">
+    </label>
+
+    <label class="row">
+      <span class="label">Keep tabs playing audio</span>
+      <input id="skipAudible" type="checkbox" class="switch">
+    </label>
+
+    <label class="row">
+      <span class="label">Show a toast on the page when a tab closes
+        <span class="note">Firefox asks once for access to websites.</span>
+      </span>
+      <button id="previewToast" class="link" type="button">Preview</button>
+      <input id="toast" type="checkbox" class="switch">
+    </label>
+
+    <div class="row stack">
+      <span class="label">Never close <span class="note">Subdomains included.</span></span>
+      <div id="chips" class="chips">
+        <input id="chipInput" placeholder="Add a site, like github.com" autocomplete="off">
+      </div>
+    </div>
+  </section>
+
+  <details id="advanced" class="card adv">
+    <summary class="card-title"><h2>Advanced</h2><span class="grow"></span><span class="chev"><i data-lucide="chevron-down" data-size="16"></i></span></summary>
+    <div class="row place-row">
+      <span class="label">Toast position</span>
+      <div class="place">
+        <div id="screen" class="screen" aria-label="Toast position">
+          <button class="spot" type="button" data-x="0" data-y="0"></button>
+          <button class="spot" type="button" data-x="50" data-y="0"></button>
+          <button class="spot" type="button" data-x="100" data-y="0"></button>
+          <button class="spot" type="button" data-x="0" data-y="50"></button>
+          <button class="spot" type="button" data-x="50" data-y="50"></button>
+          <button class="spot" type="button" data-x="100" data-y="50"></button>
+          <button class="spot" type="button" data-x="0" data-y="100"></button>
+          <button class="spot" type="button" data-x="50" data-y="100"></button>
+          <button class="spot" type="button" data-x="100" data-y="100"></button>
+          <div id="mini" class="mini-stack" title="Drag to any spot"><span class="mini"></span><span class="mini"></span></div>
+        </div>
+        <div class="place-side">
+          <span id="posName" class="pos-name"></span>
+          <label class="coord"><span>X</span><input id="posX" type="number" min="0" max="100" step="1"><span>%</span></label>
+          <label class="coord"><span>Y</span><input id="posY" type="number" min="0" max="100" step="1"><span>%</span></label>
+          <button id="previewHere" class="link" type="button">Preview</button>
+        </div>
+      </div>
+    </div>
+  </details>
+
+  <section class="card">
+    <div class="card-title">
+      <h2>Snoozed</h2><span id="snoozedCount" class="count"></span>
+    </div>
+    <div id="snoozed" class="table"></div>
+    <p id="snoozedEmpty" class="empty">Nothing snoozed. Right-click a tab and choose Snooze tab.</p>
+  </section>
+
+  <section class="card">
+    <div class="card-title">
+      <h2>Auto-closed</h2><span id="closedCount" class="count"></span>
+      <span class="grow"></span>
+      <button id="clearClosed" class="link danger">Clear history</button>
+    </div>
+    <div id="closed"></div>
+    <p id="closedEmpty" class="empty">No tabs closed yet.</p>
+  </section>
+</main>
+<script src="options.js"></script>
+</body>
+</html>

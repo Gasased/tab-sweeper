@@ -1,0 +1,17 @@
+{
+  "name": "tab-sweeper",
+  "version": "1.6.0",
+  "private": true,
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "build": "bun run build.ts",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@types/firefox-webext-browser": "^120.0.4",
+    "geist": "^1.9.2",
+    "lucide-static": "^1.73.0",
+    "typescript": "^5.6.0"
+  }
+}
